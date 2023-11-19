@@ -132,11 +132,13 @@ describe SweetNotifications::LogSubscriber do
     end
 
     it 'alternates between bold and normal body text' do
+      BOLD = "\e[1m"
+
       subject.colorize_logging = true
       odd = subject.message(event, 'Label', 'body')
       even = subject.message(event, 'Label', 'body')
-      assert odd.exclude?(ActiveSupport::LogSubscriber::BOLD + 'body')
-      assert even.include?(ActiveSupport::LogSubscriber::BOLD + 'body')
+      assert odd.exclude?(BOLD + 'body')
+      assert even.include?(BOLD + 'body')
     end
 
     it 'does not use colors when setting is disabled' do

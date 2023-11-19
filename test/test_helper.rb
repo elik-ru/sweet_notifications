@@ -29,7 +29,7 @@ class ActiveSupport::TestCase
     remove_method :describe if method_defined? :describe
   end
 
-  extend MiniTest::Spec::DSL
+  extend Minitest::Spec::DSL
   register_spec_type(/SweetNotifications$/, ActionController::TestCase)
   register_spec_type(/ControllerRuntime$/, ActionController::TestCase)
   register_spec_type(self)

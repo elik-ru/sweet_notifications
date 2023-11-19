@@ -31,9 +31,9 @@ module SweetNotifications
 
       format(
         '  %s (%.2fms)  %s',
-        color(label, label_color, true),
+        color(label, label_color, bold: true),
         event.duration,
-        color(body, nil, !@odd)
+        color(body, nil, bold: !@odd)
       )
     end
 
